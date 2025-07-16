@@ -1,0 +1,120 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 271 81% 56%;
+    --radius: 0.75rem;
+    --chart-1: 271 81% 56%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Custom light colors */
+    --luxury-purple: 271 81% 56%;
+    --luxury-gold: 43 74% 66%;
+    --luxury-surface: 0 0% 98%;
+    --luxury-border: 214.3 31.8% 91.4%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 271 81% 56%;
+    --chart-1: 271 81% 56%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Custom dark colors - matching the purple theme */
+    --luxury-purple: 271 81% 56%;
+    --luxury-gold: 43 74% 66%;
+    --luxury-surface: 240 3.7% 15.9%;
+    --luxury-border: 240 3.7% 15.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Custom scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Additional utility classes */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-luxury-purple to-luxury-gold bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(90deg, hsl(var(--luxury-purple)), hsl(var(--luxury-gold))) 1;
+  }
+}
