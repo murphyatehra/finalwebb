@@ -1,0 +1,34 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/movie/[^/]+", "dest": "/index.html" },
+    { "src": "/admin", "dest": "/index.html" },
+    { "src": "/hollywood", "dest": "/index.html" },
+    { "src": "/bollywood", "dest": "/index.html" },
+    { "src": "/south-movies", "dest": "/index.html" },
+    { "src": "/series", "dest": "/index.html" },
+    { "src": "/web-series", "dest": "/index.html" },
+    { "src": "/dual-audio", "dest": "/index.html" },
+    { "src": "/kdrama-series", "dest": "/index.html" },
+    { "src": "/horror", "dest": "/index.html" },
+    { "src": "/4k-movies", "dest": "/index.html" },
+    { "src": "/contact", "dest": "/index.html" },
+    { "src": "/join-group", "dest": "/index.html" },
+    { "src": "/how-to-download", "dest": "/index.html" },
+    { "src": "/report-broken-links", "dest": "/index.html" },
+    { "src": "/about-us", "dest": "/index.html" },
+    { "src": "/dmca", "dest": "/index.html" },
+    { "src": "/privacy-policy", "dest": "/index.html" },
+    { "src": "/request-movie", "dest": "/index.html" },
+
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
