@@ -224,7 +224,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-4 md:px-6 py-8 md:py-12">
+      <footer className="relative z-10 px-4 md:px-6 py-4 md:py-10">
         <div className="max-w-7xl mx-auto">
           <div className="backdrop-blur-xl bg-card/40 border border-border rounded-2xl p-6 md:p-8 shadow-lg">
             {/* Logo and Description */}
@@ -237,12 +237,12 @@ const Index = () => {
                 />
               </div>
               <p className="text-muted-foreground text-sm md:text-base text-center md:text-right max-w-md">
-                Your premium destination for high-quality movie downloads.
+                Your Premium Destination For High-Quality Movie Downloads.
               </p>
             </div>
             
             {/* Navigation Links */}
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-8 mb-2 md:mb-6">
               <Link to="/hollywood" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Hollywood</Link>
               <Link to="/bollywood" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Bollywood</Link>
               <Link to="/web-series" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Web Series</Link>
@@ -253,7 +253,7 @@ const Index = () => {
             </div>
 
             {/* Footer Pages */}
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-8 mb-2 md:mb-6">
               <Link to="/how-to-download" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">How to Download</Link>
               <Link to="/report-broken-links" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Report Broken Links</Link>
               <Link to="/about-us" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">About Us</Link>
@@ -265,7 +265,7 @@ const Index = () => {
             </div>
             
             <div className="border-t border-border pt-6 text-center">
-              <p className="text-muted-foreground text-xs md:text-sm">© 2024 Death Movie. All rights reserved.</p>
+              <p className="text-muted-foreground text-xs md:text-sm">© 2025 Death Movie. All rights reserved.</p>
             </div>
           </div>
         </div>
