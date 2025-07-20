@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[40vh] bg-white dark:bg-black flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[30vh] bg-white dark:bg-black flex items-center justify-center overflow-hidden">
       {/* Background pattern/texture */}
       <div 
         className="absolute inset-0 opacity-10"
@@ -16,15 +16,11 @@ const Hero = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}
       />
-      
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
         {/* Tagline */}
-        <p className="text-white dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2 whitespace-nowrap text-center">
+        <p className="text-white dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-10 max-w-full px-4 text-center break-words mx-auto">
         Your premium destination for high-quality movie downloads
        </p>
-
-        
-        {/* Join Telegram Button */}
+      {/* Join Telegram Button */}
         <div className="px-2">
           <Button 
             onClick={handleJoinTelegram}
