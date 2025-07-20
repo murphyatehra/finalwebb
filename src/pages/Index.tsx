@@ -11,7 +11,14 @@ import Hero from "@/components/Hero";
 import PopularMovies from "@/components/PopularMovies";
 import { useMovies } from "@/hooks/useMovies";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import MobileSliderNav from "@/components/MobileSliderNav";
 
+const Home = () => (
+  <div>
+    <MobileSliderNav />
+    {/* Other content */}
+  </div>
+);
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { movies: featuredMovies, loading, error } = useMovies(undefined, 12);
