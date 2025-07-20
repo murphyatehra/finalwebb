@@ -19,9 +19,10 @@ const Hero = () => {
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
         {/* Tagline */}
-        <p className="text-white-100 dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-          Your premium destination for high-quality movie downloads
-        </p>
+        <p className="text-white dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2 whitespace-nowrap text-center">
+        Your premium destination for high-quality movie downloads
+       </p>
+
         
         {/* Join Telegram Button */}
         <div className="px-2">
