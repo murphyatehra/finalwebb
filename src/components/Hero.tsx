@@ -19,7 +19,7 @@ const Hero = () => {
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
         {/* Tagline */}
-        <p className="text-white-300 dark:text-gray-300text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
+        <p className="text-white-100 dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl mb-4 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
           Your premium destination for high-quality movie downloads
         </p>
         
