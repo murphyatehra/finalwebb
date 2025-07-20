@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const handleJoinTelegram = () => {
-    window.open("https://t.me/+Sycy-qm2bjAwZDBl", "_blank");
+    window.open("https://t.me/death_movie", "_blank");
   };
 
   return (
-    <section className="relative min-h-[30vh] bg-white dark:bg-black flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[40vh] bg-white dark:bg-black flex items-center justify-center overflow-hidden">
       {/* Background pattern/texture */}
       <div 
         className="absolute inset-0 opacity-10"
