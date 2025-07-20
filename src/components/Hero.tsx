@@ -11,22 +11,24 @@ const Hero = () => {
     <section className="relative min-h-[80vh] bg-black flex items-center justify-center overflow-hidden">
       {/* Background pattern/texture */}
       <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}
-      />
-        {/* Tagline */}
-        <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-          Your premium destination for high-quality movie downloads
-        </p>
+    className="absolute inset-0 opacity-10"
+    style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    }}
+  />
+     {/* Content */}
+  <div className="relative z-10 flex flex-col items-center justify-center gap-6 px-4 text-center max-w-3xl mx-auto">   
+    {/* Tagline */}
+         <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+      Your premium destination for high-quality movie downloads
+    </p>
         
         {/* Join Telegram Button */}
         <div className="px-2">
           <Button 
             onClick={handleJoinTelegram}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto overflow-hidden"
-          >
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+    >
             <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 md:mr-3 flex-shrink-0 min-w-[1rem]" />
             <span className="text-center leading-tight break-words">
              Domains & Content Updates: Join Telegram channel
