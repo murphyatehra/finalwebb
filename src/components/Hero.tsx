@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const handleJoinTelegram = () => {
-    window.open("https://t.me/+Sycy-qm2bjAwZDBl", "_blank");
+    window.open("https://t.me/Death_movie", "_blank");
   };
 
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
           >
             <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 md:mr-3 flex-shrink-0 min-w-[1rem]" />
             <span className="text-center leading-tight break-words">
-              Domains & updates: Telegram channel's
+             Domains & Content Updates: Join Telegram channel
             </span>
           </Button>
         </div>
