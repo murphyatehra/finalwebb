@@ -34,8 +34,8 @@ const Index = () => {
       />
       
       {/* Navigation Controls */}
-     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95vw] max-w-screen-lg">
-  <div className="backdrop-blur-xl bg-card/90 border border-border/50 rounded-full px-4 py-2 shadow-lg flex items-center justify-between">
+     <nav className="w-full bg-card/90 border-b border-border shadow-sm py-3 z-10">
+  <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
     
     {/* Logo */}
     <div className="shrink-0 mr-3">
