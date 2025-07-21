@@ -34,50 +34,86 @@ const Index = () => {
       />
       
       {/* Navigation Controls */}
-     <nav className="w-full bg-card/90 border-b border-border shadow-sm py-3 z-10">
-  <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-    
-    {/* Logo */}
-    <div className="shrink-0 mr-3">
-      <img 
-        src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
-        alt="Logo" 
-        className="w-8 h-8 object-contain"
-      />
-    </div>
+     {/* Desktop Sticky Scrollable Navbar */}
+<nav className={`hidden md:block fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
+  isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+}`}>
+  <div className="backdrop-blur-xl bg-card/90 border-b border-border/30 shadow-md px-4 py-3">
+    <div className="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
+      {/* Logo */}
+      <div className="flex items-center shrink-0">
+        <img 
+          src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
+          alt="Death Logo" 
+          className="w-10 h-10 object-contain"
+        />
+      </div>
 
-    {/* Navigation Links */}
-    <div className="flex overflow-x-auto space-x-2 scrollbar-hide px-1">
+      {/* Navigation Items */}
       {[
-        { to: "/hollywood", label: "Hollywood" },
-        { to: "/bollywood", label: "Bollywood" },
-        { to: "/web-series", label: "Web Series" },
-        { to: "/dual-audio", label: "Dual Audio" },
-        { to: "/kdrama-series", label: "K-Drama" },
-        { to: "/horror", label: "Horror" },
-        { to: "/4k-movies", label: "4K Movies" },
-      ].map(({ to, label }) => (
+        { label: 'Hollywood', path: '/hollywood' },
+        { label: 'Bollywood', path: '/bollywood' },
+        { label: 'Web Series', path: '/web-series' },
+        { label: 'Dual Audio', path: '/dual-audio' },
+        { label: 'K-Drama', path: '/kdrama-series' },
+        { label: 'Horror', path: '/horror' },
+        { label: '4K Movies', path: '/4k-movies' },
+      ].map(item => (
         <Link
-          key={to}
-          to={to}
-          className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all"
+          key={item.path}
+          to={item.path}
+          className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition whitespace-nowrap shrink-0"
         >
-          {label}
+          {item.label}
         </Link>
       ))}
 
-      <Link
-        to="/join-group"
-        className="px-3 py-1.5 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full flex items-center gap-1 whitespace-nowrap transition-all"
-      >
+      {/* Telegram Link */}
+      <Link to="/join-group" className="px-4 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full transition flex items-center gap-1 whitespace-nowrap shrink-0">
         <Users className="w-4 h-4" />
         Telegram
       </Link>
-    </div>
 
-    {/* Theme Toggle */}
-    <div className="ml-3 shrink-0">
+      {/* Theme Toggle */}
+      <div className="ml-auto">
+        <ThemeToggle />
+      </div>
+    </div>
+  </div>
+</nav>
+
+{/* Mobile Sticky Grid Navbar */}
+<nav className={`md:hidden fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
+  isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+}`}>
+  <div className="backdrop-blur-xl bg-card/90 border-b border-border/30 shadow-md p-4">
+    <div className="flex items-center justify-between mb-3">
+      <img 
+        src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
+        alt="Death Logo" 
+        className="w-8 h-8 object-contain"
+      />
       <ThemeToggle />
+    </div>
+    <div className="grid grid-cols-3 gap-3">
+      {[
+        'Hollywood', 'Bollywood', 'Web Series',
+        'Dual Audio', 'K-Drama', 'Horror',
+        '4K Movies', 'Telegram'
+      ].map((item, i) => (
+        <Link
+          key={i}
+          to={`/${item.toLowerCase().replace(/\s+/g, '-').replace('telegram', 'join-group')}`}
+          className={`flex flex-col items-center p-3 rounded-xl transition-all ${
+            item === 'Telegram'
+              ? 'text-primary hover:text-primary/80 hover:bg-muted/50'
+              : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+          }`}
+        >
+          {item === 'Telegram' && <Users className="w-4 h-4 mb-1" />}
+          <span className="text-xs font-medium">{item}</span>
+        </Link>
+      ))}
     </div>
   </div>
 </nav>
