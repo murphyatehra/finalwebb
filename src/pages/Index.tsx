@@ -62,51 +62,48 @@ const Index = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className={`hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-[95vw] transition-all duration-300 ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'
-      }`}>
-        <div className="backdrop-blur-xl bg-card/90 border border-border/50 rounded-full px-6 py-3 shadow-lg">
-          <div className="flex items-center space-x-1">
-            {/* Logo */}
-            <div className="flex items-center mr-4 shrink-0">
-              <img 
-                src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
-                alt="Death Logo" 
-                className="w-10 h-10 object-contain"
-              />
-            </div>
+      <nav className="hidden md:block w-full bg-background border-b border-border shadow-sm py-4 z-40">
+  <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+    {/* Logo */}
+    <div className="flex items-center gap-4 shrink-0">
+      <img 
+        src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
+        alt="Death Logo" 
+        className="w-10 h-10 object-contain"
+      />
+    </div>
             
             {/* Navigation Items */}
-            <div className="flex items-center space-x-1 overflow-x-auto scrollbar-hide">
-              <Link to="/hollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                Hollywood
-              </Link>
-              <Link to="/bollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                Bollywood
-              </Link>
-              <Link to="/web-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                Web Series
-              </Link>
-              <Link to="/dual-audio" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                Dual Audio
-              </Link>
-              <Link to="/kdrama-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                K-Drama
-              </Link>
-              <Link to="/horror" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                Horror
-              </Link>
-              <Link to="/4k-movies" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full transition-all whitespace-nowrap shrink-0">
-                4K Movies
-              </Link>
-              <Link to="/join-group" className="px-3 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full transition-all flex items-center gap-1 whitespace-nowrap shrink-0">
-                <Users className="w-3 h-3" />
-                Telegram
-              </Link>
-            </div>
+            <div className="flex items-center space-x-2 overflow-x-auto scrollbar-hide">
+      <Link to="/hollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        Hollywood
+      </Link>
+      <Link to="/bollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        Bollywood
+      </Link>
+      <Link to="/web-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        Web Series
+      </Link>
+      <Link to="/dual-audio" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        Dual Audio
+      </Link>
+      <Link to="/kdrama-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        K-Drama
+      </Link>
+      <Link to="/horror" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        Horror
+      </Link>
+      <Link to="/4k-movies" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
+        4K Movies
+      </Link>
+      <Link to="/join-group" className="px-3 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full whitespace-nowrap flex items-center gap-1 transition-all">
+        <Users className="w-3 h-3" />
+        Telegram
+      </Link>
+    </div>
 
             {/* Theme Toggle */}
-            <div className="ml-2 shrink-0">
+            <div className="ml-4 shrink-0">
               <ThemeToggle />
             </div>
           </div>
@@ -114,19 +111,45 @@ const Index = () => {
       </nav>
 
       {/* Mobile Navigation Grid */}
-      <nav className={`md:hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95vw] transition-all duration-300 ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'
-      }`}>
-        <div className="backdrop-blur-xl bg-card/90 border border-border/50 rounded-2xl p-4 shadow-lg">
-          {/* Logo and Theme Toggle */}
-          <div className="flex items-center justify-between mb-4">
-            <img 
-              src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
-              alt="Death Logo" 
-              className="w-8 h-8 object-contain"
-            />
-            <ThemeToggle />
-          </div>
+      <nav className="w-full bg-background border-b border-border shadow-sm">
+  <div className="flex items-center justify-between px-4 py-3">
+    <img 
+      src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
+      alt="Death Logo" 
+      className="w-8 h-8 object-contain"
+    />
+    <ThemeToggle />
+  </div>
+
+  <div className="flex overflow-x-auto gap-2 px-4 pb-3 scrollbar-hide">
+    <Link to="/hollywood" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      Hollywood
+    </Link>
+    <Link to="/bollywood" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      Bollywood
+    </Link>
+    <Link to="/web-series" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      Web Series
+    </Link>
+    <Link to="/dual-audio" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      Dual Audio
+    </Link>
+    <Link to="/kdrama-series" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      K-Drama
+    </Link>
+    <Link to="/horror" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      Horror
+    </Link>
+    <Link to="/4k-movies" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
+      4K Movies
+    </Link>
+    <Link to="/join-group" className="flex-shrink-0 px-4 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full whitespace-nowrap flex items-center gap-1">
+      <Users className="w-4 h-4" />
+      Telegram
+    </Link>
+  </div>
+</nav>
+
           
           {/* Navigation Grid */}
           <div className="grid grid-cols-3 gap-2">
