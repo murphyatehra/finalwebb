@@ -13,12 +13,6 @@ import { useMovies } from "@/hooks/useMovies";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import MobileSliderNav from "@/components/MobileSliderNav";
 
-const Home = () => (
-  <div>
-    <MobileSliderNav />
-    {/* Other content */}
-  </div>
-);
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { movies: featuredMovies, loading, error } = useMovies(undefined, 12);
@@ -40,147 +34,54 @@ const Index = () => {
       />
       
       {/* Navigation Controls */}
-      <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 flex flex-col gap-2">
-        <Button
-          size="icon"
-          variant="outline"
-          onClick={showNavbar}
-          className="bg-card/90 border-border/50 backdrop-blur-xl hover:bg-muted/50"
-          title="Show Navigation"
-        >
-          <ChevronUp className="h-4 w-4" />
-        </Button>
-        <Button
-          size="icon"
-          variant="outline"
-          onClick={hideNavbar}
-          className="bg-card/90 border-border/50 backdrop-blur-xl hover:bg-muted/50"
-          title="Hide Navigation"
-        >
-          <ChevronDown className="h-4 w-4" />
-        </Button>
-      </div>
-
-      {/* Desktop Navigation */}
-      <nav className="hidden md:block w-full bg-background border-b border-border shadow-sm py-4 z-40">
-  <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95vw] max-w-screen-lg">
+  <div className="backdrop-blur-xl bg-card/90 border border-border/50 rounded-full px-4 py-2 shadow-lg flex items-center justify-between">
+    
     {/* Logo */}
-    <div className="flex items-center gap-4 shrink-0">
+    <div className="shrink-0 mr-3">
       <img 
         src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
-        alt="Death Logo" 
-        className="w-10 h-10 object-contain"
+        alt="Logo" 
+        className="w-8 h-8 object-contain"
       />
     </div>
-            
-            {/* Navigation Items */}
-            <div className="flex items-center space-x-2 overflow-x-auto scrollbar-hide">
-      <Link to="/hollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        Hollywood
-      </Link>
-      <Link to="/bollywood" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        Bollywood
-      </Link>
-      <Link to="/web-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        Web Series
-      </Link>
-      <Link to="/dual-audio" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        Dual Audio
-      </Link>
-      <Link to="/kdrama-series" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        K-Drama
-      </Link>
-      <Link to="/horror" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        Horror
-      </Link>
-      <Link to="/4k-movies" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all">
-        4K Movies
-      </Link>
-      <Link to="/join-group" className="px-3 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full whitespace-nowrap flex items-center gap-1 transition-all">
-        <Users className="w-3 h-3" />
+
+    {/* Navigation Links */}
+    <div className="flex overflow-x-auto space-x-2 scrollbar-hide px-1">
+      {[
+        { to: "/hollywood", label: "Hollywood" },
+        { to: "/bollywood", label: "Bollywood" },
+        { to: "/web-series", label: "Web Series" },
+        { to: "/dual-audio", label: "Dual Audio" },
+        { to: "/kdrama-series", label: "K-Drama" },
+        { to: "/horror", label: "Horror" },
+        { to: "/4k-movies", label: "4K Movies" },
+      ].map(({ to, label }) => (
+        <Link
+          key={to}
+          to={to}
+          className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap transition-all"
+        >
+          {label}
+        </Link>
+      ))}
+
+      <Link
+        to="/join-group"
+        className="px-3 py-1.5 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full flex items-center gap-1 whitespace-nowrap transition-all"
+      >
+        <Users className="w-4 h-4" />
         Telegram
       </Link>
     </div>
 
-            {/* Theme Toggle */}
-            <div className="ml-4 shrink-0">
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation Grid */}
-      <nav className="w-full bg-background border-b border-border shadow-sm">
-  <div className="flex items-center justify-between px-4 py-3">
-    <img 
-      src="/lovable-uploads/bec29b2b-a15c-4ec9-a80b-1420906c2bd9.png" 
-      alt="Death Logo" 
-      className="w-8 h-8 object-contain"
-    />
-    <ThemeToggle />
-  </div>
-
-  <div className="flex overflow-x-auto gap-2 px-4 pb-3 scrollbar-hide">
-    <Link to="/hollywood" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      Hollywood
-    </Link>
-    <Link to="/bollywood" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      Bollywood
-    </Link>
-    <Link to="/web-series" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      Web Series
-    </Link>
-    <Link to="/dual-audio" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      Dual Audio
-    </Link>
-    <Link to="/kdrama-series" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      K-Drama
-    </Link>
-    <Link to="/horror" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      Horror
-    </Link>
-    <Link to="/4k-movies" className="flex-shrink-0 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full whitespace-nowrap">
-      4K Movies
-    </Link>
-    <Link to="/join-group" className="flex-shrink-0 px-4 py-2 text-sm text-primary hover:text-primary/80 hover:bg-muted/50 rounded-full whitespace-nowrap flex items-center gap-1">
-      <Users className="w-4 h-4" />
-      Telegram
-    </Link>
+    {/* Theme Toggle */}
+    <div className="ml-3 shrink-0">
+      <ThemeToggle />
+    </div>
   </div>
 </nav>
 
-          
-          {/* Navigation Grid */}
-          <div className="grid grid-cols-3 gap-2">
-            <Link to="/hollywood" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">Hollywood</span>
-            </Link>
-            <Link to="/bollywood" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">Bollywood</span>
-            </Link>
-            <Link to="/web-series" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">Web Series</span>
-            </Link>
-            <Link to="/dual-audio" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">Dual Audio</span>
-            </Link>
-            <Link to="/kdrama-series" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">K-Drama</span>
-            </Link>
-            <Link to="/horror" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">Horror</span>
-            </Link>
-            <Link to="/4k-movies" className="flex flex-col items-center p-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-xl transition-all">
-              <span className="text-xs font-medium">4K Movies</span>
-            </Link>
-            <Link to="/join-group" className="flex flex-col items-center p-3 text-primary hover:text-primary/80 hover:bg-muted/50 rounded-xl transition-all">
-              <Users className="w-4 h-4 mb-1" />
-              <span className="text-xs font-medium">Telegram</span>
-            </Link>
-          </div>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <Hero />
