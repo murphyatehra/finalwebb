@@ -193,6 +193,8 @@ const Index = () => {
               <Link to="/request-movie" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Request Movie</Link>
               <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">Privacy Policy</Link>
               <Link to="/dmca" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">DMCA</Link>
+               <Link to="/admin" className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base">LOL</Link>
+              
             </div>
             
             <div className="border-t border-border pt-6 text-center">
